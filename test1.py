@@ -35,8 +35,12 @@ def main():
     pokemon = get_pokemon(809)
     print(f"{pokemon.stats}")
     """
-    pokedex_entry(1)
+    first_gen_entry()
 
+def first_gen_entry():
+
+    for x in range(1, 152):
+        pokedex_entry(x)
 
 def pokedex_entry(pkdx_no):
     pokemon = get_pokemon(pkdx_no)
