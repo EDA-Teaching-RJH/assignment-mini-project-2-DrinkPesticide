@@ -8,7 +8,6 @@
  - [ ] **Libraries**
 	*Complete* - Full Evidence shown, including your own library made
  - [ ] **File I/O**
-	*Basic* - Partial Evidence shown, potentially read or write
 	*Complete* - Full Evidence shown of reading and writing to .txt or .csv files
  - [ ] **Object Orientated Programming**
 	*Basic* - Partial Evidence shown, potentially missing more than one class or inheritance from a super class. 
