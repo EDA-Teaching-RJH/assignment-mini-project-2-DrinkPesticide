@@ -48,14 +48,15 @@ response["sprites"]["front_default"]
 """
 from urllib.request import urlopen
 import requests, json
-from pokedex_uploader import Pokemon
+import pokedex_uploader
 import tkinter as tk
 from PIL import ImageTk
 # call data from pokedex.txt
 def main():
     with open('pokedex.text', 'r') as convert_file:
         data = json.load(convert_file)
-    pokedex_data = [data]
-    print(pokedex_data[0])
+        data = data.readlines
+    
+    print(pokedex_data)
 # initial step, define creation of a widget and grid for display of those widgets
 main()
