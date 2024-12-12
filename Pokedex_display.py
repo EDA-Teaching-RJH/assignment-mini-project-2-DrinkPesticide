@@ -45,18 +45,35 @@ response["weight"]
 response["height"]*10
 response["stats"]
 response["sprites"]["front_default"]
-"""
+
 from urllib.request import urlopen
+"""
 import requests, json
 import pokedex_uploader
 import tkinter as tk
 from PIL import ImageTk
 # call data from pokedex.txt
 def main():
-    with open('pokedex.text', 'r') as convert_file:
-        data = json.load(convert_file)
-        data = data.readlines
+    pkdx_data = conversion_module()
+    print(pkdx_data[0])
+
+def pokedex_cell(pkdx_no):
+    # function to render one pokedex widget. in the form:
+    # pkdx_no, name
+    # fronturl. 
+    print(pokedex_length())
+
+    ...
+def pokedex_length():
+    pkdx_data = conversion_module()
+    pkdx_length = len(pkdx_data)
+    return pkdx_length
+def conversion_module():
+    with open('pokedex.txt', 'r') as file:
+        data = file.read()    
+    pkdx_data = data.split("\n")
     
-    print(pokedex_data)
+    return pkdx_data
+
 # initial step, define creation of a widget and grid for display of those widgets
 main()

@@ -55,8 +55,7 @@ def pokedex_entry(pkdx_no):
         "type" : pokemon.type,
         "weight" : pokemon.weight,
         "height" : pokemon.height,
-        "front_url" : pokemon.front_url,
-        "stats" : pokemon.stats,}
+        "front_url" : pokemon.front_url,}
         # formats the data as a json dictionary.
     with open("pokedex.txt", "a") as convert_file:
         # with is used so the file is automatically opened and closed, pokedex.txt is appended to, as declared by "a"
@@ -65,14 +64,13 @@ def pokedex_entry(pkdx_no):
 
 class Pokemon:
     # pokemon class declared to hold data about each pokemon 
-    def __init__(self, pkdx_no, name, type, weight, height, front_url, stats):
+    def __init__(self, pkdx_no, name, type, weight, height, front_url):
         self.pkdx_no = pkdx_no
         self.name = name        
         self.type = type
         self.weight = weight
         self.height = height
         self.front_url = front_url 
-        self.stats = stats
         # declared different variable for storage and access
 
 def get_pokemon(pkdx_no):
@@ -90,10 +88,9 @@ def get_pokemon(pkdx_no):
     weight = response["weight"]
     height = response["height"]*10
     front_url = response["sprites"]["front_default"]
-    stats = response["stats"]
     response["name"]
     # variables declared to contain data from pokeapi, in the form of dictionary calls.
-    pokemon = Pokemon(number, name, type, weight, height, front_url, stats)
+    pokemon = Pokemon(number, name, type, weight, height, front_url)
     # a pokemon object is created from all the gathered data
     return pokemon
     # the function ends and returns the pokemon class object created above
