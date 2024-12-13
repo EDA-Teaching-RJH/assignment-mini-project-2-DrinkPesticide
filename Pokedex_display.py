@@ -76,8 +76,9 @@ def get_pokedex():
     with open("pokedex.txt", "r") as file:
         for line in file:
             x = x + 1
+            line.strip()
             pkdx_data.append(line)
-    return pkdx_data
+        return pkdx_data
     """      
     print(len(data))    
     pkdx_data = json.loads(data[index_no])
