@@ -54,26 +54,35 @@ import tkinter as tk
 from PIL import ImageTk
 # call data from pokedex.txt
 def main():
-    pkdx_data = conversion_module()
-    print(pkdx_data[0])
-
+    pkdx_data = get_pokedex()
 def pokedex_cell(pkdx_no):
+    index_no = pkdx_no - 1 
     # function to render one pokedex widget. in the form:
     # pkdx_no, name
     # fronturl. 
     print(pokedex_length())
 
     ...
-def pokedex_length():
-    pkdx_data = conversion_module()
-    pkdx_length = len(pkdx_data)
+def pokedex_length(a):
+    pkdx_length = range(len(a))
     return pkdx_length
-def conversion_module():
-    with open('pokedex.txt', 'r') as file:
-        data = file.read()    
-    pkdx_data = data.split("\n")
-    
-    return pkdx_data
 
+
+def get_pokedex():
+    # iterate through all line in the txt file
+    # saves each line as a new dictionary item in a list
+    x = 0
+    pkdx_data = []
+    with open("pokedex.txt", "r") as file:
+        for line in file:
+            x = x + 1
+            pkdx_data.append(line)
+    return pkdx_data
+    """      
+    print(len(data))    
+    pkdx_data = json.loads(data[index_no])
+    print(pkdx_data)
+    """ 
+    
 # initial step, define creation of a widget and grid for display of those widgets
 main()

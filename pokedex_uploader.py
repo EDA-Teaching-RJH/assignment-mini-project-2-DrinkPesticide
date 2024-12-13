@@ -83,14 +83,12 @@ def get_pokemon(pkdx_no):
     response = json.loads(response.text)
     # uses json to load the data in the response
     name = response["name"]
-    number = pkdx_no
     type = response["types"][0]["type"]["name"]
     weight = response["weight"]
     height = response["height"]*10
-    front_url = response["sprites"]["front_default"]
-    response["name"]
+    front_url = response["sprites"]["front_default"]  
     # variables declared to contain data from pokeapi, in the form of dictionary calls.
-    pokemon = Pokemon(number, name, type, weight, height, front_url)
+    pokemon = Pokemon(pkdx_no, name, type, weight, height, front_url)
     # a pokemon object is created from all the gathered data
     return pokemon
     # the function ends and returns the pokemon class object created above
